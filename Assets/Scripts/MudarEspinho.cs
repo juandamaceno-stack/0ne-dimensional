@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class MudarEspinho : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class MudarEspinho : MonoBehaviour
     private Animator animator;
     public Sprite spriteDesativado;
     public Sprite spriteAtivado;
+    public bool estaAtivado;
 
     public string Desativado = "Desativado"; 
     public string Ativado = "Ativado";
@@ -14,26 +16,35 @@ public class MudarEspinho : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        StartCoroutine(AlternarEspinho());
     }
 
 
-    void Update()
+   IEnumerator AlternarEspinho()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        while (true)
         {
-            if (gameObject.CompareTag(Desativado))
+            yield return new WaitForSeconds(1);
+
+            estaAtivado = !estaAtivado;
+
+            if (estaAtivado)
             {
-              gameObject.tag = Ativado;
-              spriteRenderer.sprite = spriteAtivado;
-              animator.SetBool("Ativo", false);
+                gameObject.tag = Ativado;
+                spriteRenderer.sprite = spriteAtivado;
+
+                if (animator != null)
+                    animator.SetBool("Ativo", true);
             }
-        
-        else if (gameObject.CompareTag(Ativado))
+            else
             {
-              gameObject.tag = Desativado;
-              spriteRenderer.sprite = spriteDesativado;
-              animator.SetBool("Ativo", true);
+                gameObject.tag = Desativado;
+                spriteRenderer.sprite = spriteDesativado;
+
+                if (animator != null)
+                    animator.SetBool("Ativo", false);
             }
-        }   
+        }
     }
+    
 }

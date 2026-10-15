@@ -3,13 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class Morte : MonoBehaviour
 {
+    private bool jogadorMorreu = false;
 
-
-    private void OnTriggerEnter2D(Collider2D collider)
-{
-    if (collider.CompareTag("Ativado"))
+    private void OnTriggerStay2D(Collider2D collider)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (jogadorMorreu)
+            return;
+
+       
+        if (collider.CompareTag("Player") &&
+            gameObject.CompareTag("Ativado"))
+        {
+            jogadorMorreu = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
-}
 }
