@@ -16,18 +16,14 @@ public class MudarEspinho : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        StartCoroutine(AlternarEspinho());
     }
 
 
-   IEnumerator AlternarEspinho()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1);
-
-            estaAtivado = !estaAtivado;
-
+    void Update(){
+            if(Input.GetKey(KeyCode.D))
+            {
+                estaAtivado = !estaAtivado;
+            }
             if (estaAtivado)
             {
                 gameObject.tag = Ativado;
@@ -47,4 +43,4 @@ public class MudarEspinho : MonoBehaviour
         }
     }
     
-}
+
