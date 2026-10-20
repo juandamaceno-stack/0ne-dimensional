@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class MovCamera : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Transform jogador;
+    public float limiteAltura = 99f;
+    public float distanciaZ = -10f;
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        float altura = Mathf.Max(jogador.position.y,limiteAltura);
+
+        transform.position = new Vector3(jogador.position.x,altura,distanciaZ);
     }
 }
