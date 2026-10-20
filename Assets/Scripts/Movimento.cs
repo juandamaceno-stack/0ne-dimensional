@@ -23,12 +23,10 @@ public class Movimento : MonoBehaviour
 
     void Update()
     {
-        estaNoChao = Physics2D.OverlapCircle(
-            checarChao.position,
-            raioChao,
-            camadaChao
-        );
+        estaNoChao = Physics2D.OverlapCircle(checarChao.position,raioChao,camadaChao);
+
         float movimento = 0f;
+
         if (Input.GetKey(KeyCode.A))
         {
             movimento = -1f;
@@ -46,18 +44,11 @@ public class Movimento : MonoBehaviour
             animator.SetBool("Andar", false);
         }
 
-        rb.linearVelocity = new Vector2(
-            movimento * velocidade,
-            rb.linearVelocity.y
-        );
-
+        rb.linearVelocity = new Vector2(movimento * velocidade,rb.linearVelocity.y);
      
         if (Input.GetKeyDown(KeyCode.W) && estaNoChao)
         {
-            rb.linearVelocity = new Vector2(
-                rb.linearVelocity.x,
-                velocidade
-            );
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x,velocidade);
         }
     }
 
@@ -66,7 +57,7 @@ public class Movimento : MonoBehaviour
         if (checarChao == null)
             return;
 
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(checarChao.position, raioChao);
     }
 }

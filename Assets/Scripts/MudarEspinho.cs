@@ -19,26 +19,32 @@ public class MudarEspinho : MonoBehaviour
     }
 
 
-    void Update(){
-            if(Input.GetKey(KeyCode.D))
+    void Update()
+        {
+
+            if(Input.GetKeyDown(KeyCode.Q))
             {
                 estaAtivado = !estaAtivado;
             }
             if (estaAtivado)
             {
                 gameObject.tag = Ativado;
+
                 spriteRenderer.sprite = spriteAtivado;
 
                 if (animator != null)
-                    animator.SetBool("Ativo", true);
+
+                animator.SetBool("Ativo", true);
             }
             else
             {
                 gameObject.tag = Desativado;
+
                 spriteRenderer.sprite = spriteDesativado;
 
                 if (animator != null)
-                    animator.SetBool("Ativo", false);
+
+                animator.SetBool("Ativo", false);
             }
         }
     }
