@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Movimento : MonoBehaviour
 {
+    public Morte morte;
+
     private Animator animator;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -59,5 +61,12 @@ public class Movimento : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(checarChao.position, raioChao);
+    }
+       void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Limite"))
+        {
+          morte.Morreu();
+        }
     }
 }

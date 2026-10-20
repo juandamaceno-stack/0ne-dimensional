@@ -18,10 +18,8 @@ public class MudarEspinho : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
     void Update()
         {
-
             if(Input.GetKeyDown(KeyCode.Q))
             {
                 estaAtivado = !estaAtivado;
