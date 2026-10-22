@@ -64,7 +64,7 @@ public class Movimento : MonoBehaviour
     }
        void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Limite"))
+        if(collision.gameObject.CompareTag("Limite") || collision.gameObject.CompareTag("Inimigo"))
         {
           morte.Morreu();
         }
