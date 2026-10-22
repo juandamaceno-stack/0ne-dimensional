@@ -34,5 +34,9 @@ public class Ia : MonoBehaviour
         {
             velocidade=-velocidade;
         }
+        if (collider.CompareTag("Ativado") && GetComponent<SpriteRenderer>().isVisible)
+        {
+            Destroy(gameObject);
+        }
     }
 }

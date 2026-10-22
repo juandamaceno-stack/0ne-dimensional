@@ -45,6 +45,15 @@ public class Movimento : MonoBehaviour
         {
             animator.SetBool("Andar", false);
         }
+        if (estaNoChao==false)
+        {
+            animator.SetBool("Pulando", true);
+            animator.SetBool("Andar", false);
+        }
+        else
+        {
+            animator.SetBool("Pulando", false);
+        }
 
         rb.linearVelocity = new Vector2(movimento * velocidade,rb.linearVelocity.y);
      

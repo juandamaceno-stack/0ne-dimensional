@@ -8,6 +8,8 @@ TagManager:
   - Ativado
   - Chao
   - Limite
+  - IaLimite
+  - Inimigo
   layers:
   - Default
   - TransparentFX
