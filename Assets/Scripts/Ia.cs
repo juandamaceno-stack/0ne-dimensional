@@ -28,12 +28,22 @@ public class Ia : MonoBehaviour
       }
 
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Inimigo"))
+        {
+          velocidade=-velocidade;
+        }
+    }
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("IaLimite"))
         {
             velocidade=-velocidade;
         }
+    }
+    void OnTriggerStay2D(Collider2D collider)
+    {
         if (collider.CompareTag("Ativado") && GetComponent<SpriteRenderer>().isVisible)
         {
             Destroy(gameObject);

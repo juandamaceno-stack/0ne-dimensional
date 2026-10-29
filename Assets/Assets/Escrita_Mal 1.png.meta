@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 60af7f95169dbac439bd6c808722ac44
+guid: ab6c0462e585fb74a99455fdc2c245cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5556267985790604966
-    second: Escrita_Bom_0
-  - first:
-      213: 1001312117456109663
-    second: Escrita_Bom_1
-  - first:
-      213: 1050254894783530401
-    second: Escrita_Bom_2
+      213: 5749835018803923334
+    second: Escrita_Mal 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Escrita_Bom_0
+      name: Escrita_Mal 1_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 35
-        width: 14
-        height: 23
+        x: 5
+        y: 9
+        width: 53
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a59631e84bb24e2b0800000000000000
-      internalID: -5556267985790604966
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Escrita_Bom_1
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 35
-        width: 14
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f50044ec01065ed00800000000000000
-      internalID: 1001312117456109663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Escrita_Bom_2
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 35
-        width: 19
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1a500372341439e00800000000000000
-      internalID: 1050254894783530401
+      spriteID: 689c8e45c748bcf40800000000000000
+      internalID: 5749835018803923334
       vertices: []
       indices: 
       edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Escrita_Bom_0: -5556267985790604966
-      Escrita_Bom_1: 1001312117456109663
-      Escrita_Bom_2: 1050254894783530401
+      Escrita_Mal 1_0: 5749835018803923334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
