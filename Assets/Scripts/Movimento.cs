@@ -13,7 +13,7 @@ public class Movimento : MonoBehaviour
     public Transform checarChao;
     public LayerMask camadaChao;
     public float raioChao = 0.12f;
-
+    public bool descerCamera;
     private bool estaNoChao;
 
     void Start()
@@ -76,6 +76,17 @@ public class Movimento : MonoBehaviour
         if(collision.gameObject.CompareTag("Limite") || collision.gameObject.CompareTag("Inimigo"))
         {
           morte.Morreu();
+        }
+    }
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("DescerCM"))
+        {
+            descerCamera=true;
+        }        
+        if (collider.gameObject.CompareTag("SubirCM"))
+        {
+            descerCamera=false;
         }
     }
 }

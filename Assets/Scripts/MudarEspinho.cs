@@ -7,7 +7,10 @@ public class MudarEspinho : MonoBehaviour
     private Animator animator;
     public Sprite spriteDesativado;
     public Sprite spriteAtivado;
-    public bool estaAtivado;
+    public bool primeiraVez=true;
+    public int estaAtivado;
+    public GameObject bom;
+    public GameObject mal;
 
     public string Desativado = "Desativado"; 
     public string Ativado = "Ativado";
@@ -20,13 +23,23 @@ public class MudarEspinho : MonoBehaviour
 
     void Update()
         {
+            if(gameObject.tag=="Ativado"&&primeiraVez){
+                estaAtivado=-2;
+                primeiraVez=false;
+            }
+            if(gameObject.tag=="Desativado"&&primeiraVez){
+                estaAtivado=1;
+                primeiraVez=false;
+            }
             if(Input.GetKeyDown(KeyCode.Q))
             {
-                estaAtivado = !estaAtivado;
+                estaAtivado = -estaAtivado;
             }
-            if (estaAtivado)
+            if (estaAtivado==-2 || estaAtivado==-1)
             {
                 gameObject.tag = Ativado;
+                mal.SetActive(true);
+                bom.SetActive(false);
 
                 spriteRenderer.sprite = spriteAtivado;
 
@@ -34,10 +47,11 @@ public class MudarEspinho : MonoBehaviour
 
                 animator.SetBool("Ativo", true);
             }
-            else
+            else if(estaAtivado==2 || estaAtivado==1)
             {
                 gameObject.tag = Desativado;
-
+                mal.SetActive(false);
+                bom.SetActive(true);
                 spriteRenderer.sprite = spriteDesativado;
 
                 if (animator != null)
@@ -45,6 +59,7 @@ public class MudarEspinho : MonoBehaviour
                 animator.SetBool("Ativo", false);
             }
         }
+        
     }
     
 
